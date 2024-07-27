@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: ptanshulcharlievotingapp 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ptanshulcharlievotingapp
+  template:
+    metadata:
+      labels:
+        app: ptanshulcharlievotingapp 
+    spec:
+      containers:
+        - name: ptanshulcharlievotingapp 
+          image: cloudacr.azurecr.io/ptanshulcharlievotingapp
+          ports:
+          - containerPort: 80
